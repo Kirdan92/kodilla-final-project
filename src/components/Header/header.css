@@ -1,0 +1,31 @@
+a, a:visited {
+    color: black;
+}
+
+a.active {
+    color: green;
+}
+.header-container {
+    background-color:#b2bec3;
+    width: 100%;
+    display: block;
+}
+nav a {
+    margin: 5px;
+}
+
+nav {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    position: relative;
+    top: 0;
+
+    
+}
+.main-title {
+    font-size: 1.5rem;
+}

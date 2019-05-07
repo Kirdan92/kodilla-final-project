@@ -1,0 +1,27 @@
+.footer-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #b2bec3;
+    height: 2.5rem;
+}
+
+footer a {
+    margin: 5px;
+}
+
+footer {
+    height: 100%;
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer a {
+    margin: 5px;
+}
+.main-title {
+    font-size: 1.5rem;
+}

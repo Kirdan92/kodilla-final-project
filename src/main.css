@@ -1,0 +1,26 @@
+/*
+  Global CSS file
+*/
+html{
+	min-height: 100%
+}
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	line-height: normal;
+}
+body {
+    background-color: #dfe6e9;
+}
+
+.container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    padding-bottom: 2.5rem;
+}
