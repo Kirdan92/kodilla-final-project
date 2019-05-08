@@ -1,13 +1,17 @@
 import React from 'react';
-
 import Book from './Book';
+import {cartItemsQuantity} from '../Cart'
 
 const BooksList = (props) => (
-    <div className="users-list">
+    <div className="book-list-container">
         {props.books.map(book => {
-            return (
+            return (               
                 <div className="single-book" key={book.id}>
-                    <Book book={book} />
+                    <Book 
+                        book={book} 
+                        addItem={props.addItem}
+                        cart={cartItemsQuantity(props.cart)}
+                    />
                 </div>
             )
         })}
@@ -15,3 +19,5 @@ const BooksList = (props) => (
 );
 
 export default BooksList;
+
+

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import  Home  from './components/Home';
-import  User  from './components/User';
+import  Home  from './components/Home/index';
+import  User  from './components/User/User';
 import { NoMatch } from './components/NoMatch';
-import { Cart } from './components/Cart';
+import  Cart  from './components/Cart/index';
 
 
 const Router = () => (

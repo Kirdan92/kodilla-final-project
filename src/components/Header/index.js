@@ -3,7 +3,16 @@ import { NavLink } from "react-router-dom";
 
 import "./header.css";
 
+function sumItems(cartState) {
+  return cartState.reduce((prev, current) => {
+    return prev + current.quantity;
+  }, 0)
+}
+
 export const Header = props => {
+  const itemsInCart = props.cart;
+  console.log("TUTAJ" + JSON.stringify(itemsInCart));
+  console.log("liczba:" + sumItems(itemsInCart));
   return (
     <div className="header-container">
       <nav>
@@ -16,10 +25,12 @@ export const Header = props => {
             User
           </NavLink>
           <NavLink exact to="/cart" activeClassName="active">
-            Cart
+            Cart({sumItems(itemsInCart) || 0})
           </NavLink>
         </div>
       </nav>
     </div>
   );
 };
+
+

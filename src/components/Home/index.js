@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { getBooks, addBook } from '../actions/actionsBooks';
-import BooksList from "./Books/BooksList";
+import BooksList from "../Books/BooksList";
 
+require('./home.css');
 
 class Home extends Component {
   constructor(props) {
@@ -10,16 +10,20 @@ class Home extends Component {
 	}
 
   componentDidMount() {
-		this.props.getBooks();
+
 	}
 
 	render() {
     console.log(this.props)
 		return(
       
-			<div>
+			<div className="homepage-container">
           <div className="sidebar">Sidebar</div>
-          <BooksList books={this.props.books.books}  />
+					<BooksList 
+						books={this.props.books.booksArray}  
+						addItem={this.props.addItem}
+						cart={this.props.cart}
+					/>
       </div>
       
 		);
@@ -29,15 +33,21 @@ class Home extends Component {
 
 const mapStateToProps = function(store) {
 	return {
-		books : store.booksReducer,
+		books: store.booksReducer,
+		cart: store.cart,
 	};
 };
 const mapDispatchToProps = dispatch => ({
-  getBooks: () => dispatch(getBooks())
+  addItem: (item) => {
+		dispatch({type: 'ADD_ITEM', payload: item})
+	},
+	removeItem: (id) => {
+		dispatch({type: 'REMOVE_Item', payload: id})
+	}
 })
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+	mapDispatchToProps
 )(Home);
 

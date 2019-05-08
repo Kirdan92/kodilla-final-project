@@ -1,0 +1,38 @@
+ {
+    "products": {
+        "books": [
+            {
+                "id": 1,
+                "title": "Władca Pierścieni: Drużyna Pierścienia",
+                "author": "John Ronald Reuel Tolkien"
+            },
+            {
+                "id": 2,
+                "title": "Władca Pierścieni: Dwie Wieże",
+                "author": "John Ronald Reuel Tolkien"
+            },
+            {
+                "id": 3,
+                "title": "Władca Pierścieni: Powrót Króla",
+                "author": "John Ronald Reuel Tolkien"
+            }
+        ],
+        "comics": [
+            {
+                "id": 1,
+                "title": "X-MEN",
+                "author": "John Ronald Reuel Tolkien"
+            },
+            {
+                "id": 2,
+                "title": "Władca Pierścieni: Dwie Wieże",
+                "author": "John Ronald Reuel Tolkien"
+            },
+            {
+                "id": 3,
+                "title": "Władca Pierścieni: Powrót Króla",
+                "author": "John Ronald Reuel Tolkien"
+            }
+        ]
+    }
+}
