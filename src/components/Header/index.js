@@ -11,8 +11,6 @@ function sumItems(cartState) {
 
 export const Header = props => {
   const itemsInCart = props.cart;
-  console.log("TUTAJ" + JSON.stringify(itemsInCart));
-  console.log("liczba:" + sumItems(itemsInCart));
   return (
     <div className="header-container">
       <nav>

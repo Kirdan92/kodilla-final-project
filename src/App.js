@@ -13,7 +13,7 @@ class App extends Component {
     render() {
         return (
         <div>
-            <Header cart={cartItemsQuantity(this.props.cart)} />
+            <Header cart={this.props.cart} />
             <Router />
             <Footer />
         </div>

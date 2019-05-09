@@ -1,17 +1,60 @@
 import React from "react";
 import { connect } from "react-redux";
 
-export const cartItemsQuantity = (cartItems) => {
-  return cartItems.reduce((sum, item) => {
-    const filteredItem = sum.filter(item2 => item2.id === item.id)[0]
-    filteredItem !== undefined ? filteredItem.quantity++ : sum.push({...item, quantity: 1,})
-    return sum;
-  }, [])
+function sort (items) {
+  return items.sort((a, b) => a.id - b.id)
+};
+
+const Cart = (props) => {
+  return(
+    <table>
+      <thead>
+      <tr>
+        <th>Przedmiot</th>
+        <th>Ilość</th>
+      </tr>
+      </thead>
+      <tbody>
+        {
+          sort(props.cart).map(cartItem => <tr key={cartItem.id}>
+            <td>{ cartItem.title }</td>
+            <td>{ cartItem.quantity }</td>
+            <td>{ cartItem.price }</td>
+            <td>
+              <button onClick={() => props.addToCart(cartItem)}>+</button>
+            </td>
+            <td>
+              <button onClick={() => props.removeFromCart(cartItem)}>-</button>
+            </td>
+            <td>
+              <button onClick={() => props.removeAllFromCart(cartItem)}>Usuń wszsytkie</button>
+            </td>
+          </tr>)
+        }
+      </tbody>
+    </table>
+  );
 }
 
-export default class Cart extends React.Component {
-  render() {
-    return <div>Bookshop</div>;
-  }
+
+const mapStateToProps = function(store) {
+	return {
+		cart: store.cart,
+	};
+};
+
+const mapDispatchToProps = function(dispatch) {
+	return {
+		addToCart: (item) => {
+      dispatch({ type: "ADD_ITEM", payload: item})
+    },
+    removeFromCart: (item) => {
+      dispatch({ type: "REMOVE_ITEM", payload: item})
+    },
+    removeAllFromCart: (item) => {
+      dispatch({ type: "REMOVE_ALL", payload: item})
+    }
+	}
 }
 
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);
