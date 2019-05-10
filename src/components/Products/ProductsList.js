@@ -30,15 +30,8 @@ class BooksList extends React.Component {
         
         const rowSize = 4;
         const rowUnit = 12 / rowSize;
-        console.log(products)
-        console.log(productPerPage)
-        const currentProducts = products.slice(
-            currentPage * productPerPage,
-            (currentPage + 1) * productPerPage
-          )
-            console.log(currentProducts)
-       
-    
+        const currentProducts = products.slice( currentPage * productPerPage,(currentPage + 1) * productPerPage);
+
         const productsLayout = currentProducts
           .map((product, i) => (
               <Col sm={rowUnit} key={product.id}>
@@ -63,7 +56,7 @@ class BooksList extends React.Component {
             return rows;
             }, []
           )
-          .map((cols, i) => <Row key={`row-${i}`}>{cols}</Row>)
+          .map((cols, i) => <Row className="product-row" key={`row-${i}`}>{cols}</Row>)
     
           
     
@@ -73,41 +66,37 @@ class BooksList extends React.Component {
         }
         
         const pagesCount = pageNumbers.length;
-        return (
-            
-          <div>
+        return (       
+          
             <Container>
-                {productsLayout}     
-            
-            <Pagination aria-label="Page navigation example">
-            
-                <PaginationItem disabled={currentPage <= 0}>
-                    <PaginationLink
-                        onClick={e => this.handleClick(e, currentPage - 1)}
-                        previous
-                        href="#"
-                    />
-                </PaginationItem>
+                {productsLayout}                 
+                <Pagination aria-label="Page navigation example" className="product-pagination">               
+                    <PaginationItem disabled={currentPage <= 0}>
+                        <PaginationLink
+                            onClick={e => this.handleClick(e, currentPage - 1)}
+                            previous
+                            href="#"
+                        />
+                    </PaginationItem>
 
-                {[...Array(pagesCount)].map((page, i) => 
-                <PaginationItem active={i === currentPage} key={i}>
-                    <PaginationLink onClick={e => this.handleClick(e, i)} href="#">
-                    {i + 1}
-                    </PaginationLink>
-                </PaginationItem>
-                )}
+                    {[...Array(pagesCount)].map((page, i) => 
+                    <PaginationItem active={i === currentPage} key={i}>
+                        <PaginationLink onClick={e => this.handleClick(e, i)} href="#">
+                        {i + 1}
+                        </PaginationLink>
+                    </PaginationItem>
+                    )}
 
-                <PaginationItem disabled={currentPage >= pagesCount - 1}>
-                    <PaginationLink
-                        onClick={e => this.handleClick(e, currentPage + 1)}
-                        next
-                        href="#"
-                    />  
-                </PaginationItem>
-
-            </Pagination>
+                    <PaginationItem disabled={currentPage >= pagesCount - 1}>
+                        <PaginationLink
+                            onClick={e => this.handleClick(e, currentPage + 1)}
+                            next
+                            href="#"
+                        />  
+                    </PaginationItem>
+                </Pagination>
             </Container>
-          </div>
+          
         )
     }
 

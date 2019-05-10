@@ -34,7 +34,9 @@
     height: 150px;
 }
 
-
+.product-row{
+    margin-bottom: 10px;
+}
 .product-list-container {
     display: flex;
     justify-content: space-between;
@@ -71,4 +73,7 @@
 
 .product-price {
     font-size: 1rem;
+}
+.product-pagination {
+    padding: 0;
 }
