@@ -24,3 +24,10 @@ body {
 .content-wrapper {
     padding-bottom: 2.5rem;
 }
+
+.center-justify {
+	justify-content: center;
+}
+.center-align {
+	text-align: center;
+}

@@ -1,9 +1,9 @@
 .homepage-container {
     display: grid;
     grid-template-areas: 
-    'sidebar booklist rightspace';
+    'sidebar booklist';
     grid-gap: 10px;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr;
     padding-top: 15px;
 }
 
@@ -76,4 +76,15 @@
 }
 .product-pagination {
     padding: 0;
+}
+
+
+
+
+@media (max-width: 576px) {
+	.homepage-container  {
+	  grid-template-columns: 1fr auto;
+	  grid-template-areas: 
+		"sidebar booklist"
+     }
 }

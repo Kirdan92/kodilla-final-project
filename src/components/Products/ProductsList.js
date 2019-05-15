@@ -2,14 +2,14 @@ import React from 'react';
 import Product from './Product';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
 
-class BooksList extends React.Component {
+class ProductList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          products: props.products,
           currentPage: 0,
           productPerPage: 12
         };
@@ -26,21 +26,25 @@ class BooksList extends React.Component {
     }
     render () {
         
-        const { products, currentPage, productPerPage } = this.state;
+        const { currentPage, productPerPage } = this.state;
         
         const rowSize = 4;
         const rowUnit = 12 / rowSize;
-        const currentProducts = products.slice( currentPage * productPerPage,(currentPage + 1) * productPerPage);
-
+        const currentProducts = this.props.products.slice( currentPage * productPerPage,(currentPage + 1) * productPerPage);
+        console.log(currentProducts)
         const productsLayout = currentProducts
           .map((product, i) => (
-              <Col sm={rowUnit} key={product.id}>
-                <Product
-                    product={product} 
-                    addToCart={this.props.addToCart}
-                    removeFromCart={this.props.removeFromCart}
-                    cartItem={this.props.cart.filter(cartItem => cartItem.id === product.id)[0]}
-                />
+              <Col  xs="12" sm="6" md="4" lg={rowUnit} key={product.id}>
+                			
+                  <Product
+                  
+                      product={product} 
+                      addToCart={this.props.addToCart}
+                      removeFromCart={this.props.removeFromCart}
+                      cartItem={this.props.cart.filter(cartItem => cartItem.id === product.id)[0]}
+                  >
+
+                  </Product>
               </Col>
             )
           )
@@ -56,12 +60,12 @@ class BooksList extends React.Component {
             return rows;
             }, []
           )
-          .map((cols, i) => <Row className="product-row" key={`row-${i}`}>{cols}</Row>)
+          .map((cols, i) => <Row className="product-row center-justify" key={`row-${i}`}>{cols}</Row>)
     
           
     
         const pageNumbers = [];
-        for (let i = 1; i <= Math.ceil(products.length / productPerPage); i++) {
+        for (let i = 1; i <= Math.ceil(this.props.products.length / productPerPage); i++) {
             pageNumbers.push(i);
         }
         
@@ -70,7 +74,7 @@ class BooksList extends React.Component {
           
             <Container>
                 {productsLayout}                 
-                <Pagination aria-label="Page navigation example" className="product-pagination">               
+                <Pagination aria-label="Page navigation example" className="product-pagination center-justify">               
                     <PaginationItem disabled={currentPage <= 0}>
                         <PaginationLink
                             onClick={e => this.handleClick(e, currentPage - 1)}
@@ -102,4 +106,4 @@ class BooksList extends React.Component {
 
   }
 
-  export default BooksList;
+  export default ProductList;
