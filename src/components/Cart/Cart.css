@@ -1,0 +1,28 @@
+.middle-posiiton {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+}
+.emptyCart-link:hover {
+    text-decoration: none;
+}
+
+.emptyCart-title, .emptyCart-link-text {
+    font-size: 1.3rem;
+
+}
+
+.emptyCart-link-text {
+    color: #3498db;  
+}
+.emptyCart-link-text:hover {
+    color: #34495e;
+}
+
+.cart-productImage {
+    height: 120px;
+}
+.checkout-col {
+    display: flex;
+    justify-content: flex-end;
+}

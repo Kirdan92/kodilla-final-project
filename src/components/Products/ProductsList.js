@@ -2,7 +2,6 @@ import React from 'react';
 import Product from './Product';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
-import { Link } from 'react-router-dom';
 
 
 
@@ -34,7 +33,7 @@ class ProductList extends React.Component {
         console.log(currentProducts)
         const productsLayout = currentProducts
           .map((product, i) => (
-              <Col  xs="12" sm="6" md="4" lg={rowUnit} key={product.id}>
+              <Col  xs="12" sm="6" md="4" className="center-justify flex-display" lg={rowUnit} key={product.id}>
                 			
                   <Product
                   
@@ -72,7 +71,7 @@ class ProductList extends React.Component {
         const pagesCount = pageNumbers.length;
         return (       
           
-            <Container>
+            <Container className="product-list-wrapper">
                 {productsLayout}                 
                 <Pagination aria-label="Page navigation example" className="product-pagination center-justify">               
                     <PaginationItem disabled={currentPage <= 0}>

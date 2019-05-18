@@ -13,6 +13,7 @@ class Home extends Component {
 		this.state = { 
 			sort: '',
 			cover: '',
+			type: '',
 			search: '',
 			products: [], 
 			filteredProducts: []
@@ -20,16 +21,12 @@ class Home extends Component {
 		this.handleSearchProducts = this.handleSearchProducts.bind(this);
 		this.handlePriceSort = this.handlePriceSort.bind(this);
 		this.handleCoverFilter = this.handleCoverFilter.bind(this);
+		this.handleTypeFilter = this.handleTypeFilter.bind(this);
 	}
 
-	componentWillMount() {	
-			this.setState({
-				products: this.props.products.products,
-			})
-			this.listProducts();
-  	}
 
-		componentDidMount() {	
+
+	componentDidMount() {	
 			this.setState({
 				products: this.props.products.products,
 			})
@@ -48,14 +45,17 @@ class Home extends Component {
 			  } else {
 				state.products.sort((a, b) => (a.id > b.id) ? 1 : -1);
 			  }
-			  if (state.cover !== '') {
-				return { filteredProducts: state.products.filter(a => a.cover === state.cover) };
+			if (state.cover !== '') {
+			return { filteredProducts: state.products.filter(a => a.cover === state.cover) };
+			}
+			if (state.type !== '') {
+				return { filteredProducts: state.products.filter(a => a.type.toLowerCase() === state.type.toLowerCase()) };
 				}
-				if (state.search !== '') {
-					return { filteredProducts: state.products.filter(product =>  product.title.toLowerCase().includes(state.search.toLowerCase())) };
-					}
-			  return { filteredProducts: state.products };
-			})
+			if (state.search !== '') {
+				return { filteredProducts: state.products.filter(product =>  product.title.toLowerCase().includes(state.search.toLowerCase())) };
+				}
+			return { filteredProducts: state.products };
+		})
 	}
 
 	handleSearchProducts(event) {
@@ -63,13 +63,18 @@ class Home extends Component {
 		this.listProducts();
 	}
 
-  handlePriceSort(event) {
+  	handlePriceSort(event) {
 		this.setState({sort: event.target.value});
 		this.listProducts();
 	}
 
 	handleCoverFilter(event) {
 		this.setState({cover: event.target.value});
+		this.listProducts();
+	}
+
+	handleTypeFilter(event) {
+		this.setState({type: event.target.value});
 		this.listProducts();
 	}
 
@@ -80,10 +85,12 @@ class Home extends Component {
 				<div className="sidebar">
 					<Filter 
 						cover={this.state.cover} 
+						type={this.state.type} 
 						sort={this.state.sort} 
 						search={this.state.search} 
 						handlePriceSort={this.handlePriceSort} 
 						handleCoverFilter={this.handleCoverFilter} 
+						handleTypeFilter={this.handleTypeFilter} 
 						handleSearchProducts={this.handleSearchProducts}
 					/>
 		

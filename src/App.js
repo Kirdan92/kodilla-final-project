@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Router from './Router';
 import { Header } from './components/Header';
 import { Footer } from "./components/Footer";
-import {cartItemsQuantity} from './components/Cart'
+
 
 import { connect } from 'react-redux';
 

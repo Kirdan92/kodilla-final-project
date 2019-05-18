@@ -1,7 +1,159 @@
 .sidebar {
-    padding: 10px;
+    position: relative;
+    border-right: 1px solid;
+    display: flex;
+    justify-content: center;
 }
 
 .hidden-radio {
     display: none;
+}
+
+.sidebar-container {
+
+}
+
+
+.sidebar-hidden {
+    max-width: 50px;
+}
+
+.sidebar-active {
+    max-width: 200px;
+}
+
+
+.sidebar-content {
+    width: 100%;
+}
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.sort-container, .filter-container {
+    margin-bottom: 20px;
+}
+
+.sidebar-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding-top: 10px;
+}
+.sidebar-title:first-of-type {
+    margin-top: 0;
+}
+
+.sidebar-hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+.filter-bos {
+    padding-top: 10px;
+}
+
+.filter-title {
+    font-size: 1.1rem;
+    color: #636e72;
+    text-decoration: underline;
+}
+
+.filter-form, .sort-form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sidebar-list {
+    list-style-type: none;
+    padding: none;
+}
+
+.sidebar-list li input{
+    visibility: hidden;
+}
+
+.sidebar-list li label{
+    cursor: pointer;
+}
+
+
+.sidebar-list li input:hover:not(:checked) + label{
+	color: #636e72;
+}
+
+.sidebar-list li input:checked + label:before {
+	content:'\2714';
+	text-indent: .9em;
+	color: #27ae60;
+	background-color: #ecf0f1;
+}
+
+/*Mobil Sidebar Styles*/
+
+.sidebar-container-small {
+    padding-top: 10px;
+    position: relative;
+}
+.mobile-sidebar-container {
+    flex-direction: column;  
+    height: 100%;
+    padding-top: 10px;
+    transition: all 0.9s linear;
+}
+
+.mobile-sidebar-active {
+    visibility: visible;
+}
+
+.mobile-sidebar-hidden {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.hamburger {
+    width: 40px;
+    height: 35px;
+    border: 0;
+    border-top: 5px solid #fff;
+    background: transparent;
+    position: relative;
+    transition: 0.2s transform linear;
+}
+
+.hamburger::before, .hamburger::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top: 5px solid #fff;
+    transform: translateY(10px)
+}
+
+.hamburger::after  {
+    transform: translateY(25px);
+    transition: 0.2s transform linear;
+}
+
+.hamburger:focus {
+    transform: rotate(45deg) translateY(5px);
+    outline: none;
+    border: none;
+}
+
+.hamburger:focus::after {
+    transform: rotate(-90deg) translateX(-10px);
+
+}
+
+@media (max-width: 768px) {
+	.sidebar{
+	  border: none;
+     }
 }
