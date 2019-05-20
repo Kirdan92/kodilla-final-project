@@ -60,7 +60,7 @@ function sort (items) {
       }
       return {finalPrice: partialPrice}
     })
-    return {finalPrice: partialPrice}
+    
   }
 
   render() {
@@ -85,7 +85,7 @@ function sort (items) {
                   <td>{ cartItem.quantity }</td>
                   <td>{ cartItem.price }</td>
                   <td>
-                    <Button color="success" onClick={() => this.props.addToCart(cartItem)}>+</Button>
+                    <Button color="success" onClick={() => this.handleAdd(cartItem)}>+</Button>
                   </td>
                   <td>
                     <Button color="danger" onClick={() => this.handleRemove(cartItem)}>-</Button>

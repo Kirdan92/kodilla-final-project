@@ -7,7 +7,7 @@ const searchProducts = (state, action) => {
     const foundProducts = state.products.filter(product => product.title.toLowerCase().includes(action.toLowerCase()));
             return Object.assign({}, state, {filtered: foundProducts});
 }
-
+//fetch db ,
 
 const initialState = {
     products: productsData.products,

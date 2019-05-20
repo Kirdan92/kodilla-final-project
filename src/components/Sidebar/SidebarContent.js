@@ -41,7 +41,7 @@ const SidebarContent = (props) => {
                     <form className="filter-form">
                         <ul className="sidebar-list">
                             <li>
-                                <input type="radio"  name="cover" value="" id="cover-all" onChange={props.handleCoverFilter} /> 
+                                <input type="radio"  name="cover" value="" id="cover-all" onChange={props.handleCoverFilter} defaultChecked={true}/> 
                                 <label htmlFor="cover-all">Wszsytkie</label>
                             </li>    
                             <li>
@@ -61,7 +61,7 @@ const SidebarContent = (props) => {
                     <form className="filter-form">
                         <ul className="sidebar-list">
                             <li>
-                                <input type="radio"  name="type" value="" id="type-all" onChange={props.handleTypeFilter} /> 
+                                <input type="radio"  name="type" value="" id="type-all" onChange={props.handleTypeFilter} defaultChecked={true} /> 
                                 <label htmlFor="type-all" >Wszsytkie</label>
                             </li>    
                             <li>
