@@ -21,6 +21,7 @@ const removeAllFromCart = (cart, item) => {
 }
 
 
+
 const initialState = [];
 
 const cartReducer = (state=initialState, action) => {
@@ -30,8 +31,8 @@ const cartReducer = (state=initialState, action) => {
             return addToCart(state, action.payload);
         case "REMOVE_ITEM":       
             return removeFromCart(state, action.payload);     
-            case "REMOVE_ALL":       
-            return removeAllFromCart(state, action.payload);    
+        case "REMOVE_ALL":       
+            return removeAllFromCart(state, action.payload);       
         default:
             return state;
     }

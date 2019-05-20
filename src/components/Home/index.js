@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import ProductsList from "../Products/ProductsList";
-import Filter from "../Sidebar/Filter";
+import Filter from "../Sidebar/Sidebar";
+import { searchProducts } from "../../actions/actionsProducts";
 
 require('./home.css');
 
@@ -12,14 +13,20 @@ class Home extends Component {
 		this.state = { 
 			sort: '',
 			cover: '',
+			type: '',
+			search: '',
 			products: [], 
 			filteredProducts: []
 		};
+		this.handleSearchProducts = this.handleSearchProducts.bind(this);
 		this.handlePriceSort = this.handlePriceSort.bind(this);
 		this.handleCoverFilter = this.handleCoverFilter.bind(this);
+		this.handleTypeFilter = this.handleTypeFilter.bind(this);
 	}
 
-	componentWillMount() {	
+
+
+	componentDidMount() {	
 			this.setState({
 				products: this.props.products.products,
 			})
@@ -27,13 +34,6 @@ class Home extends Component {
   	}
 
 	
-	  componentDidMount() {	
-		this.setState({
-			products: this.props.products.products,
-		})
-		this.listProducts();
-  	}
-
 
 	listProducts() {
 		this.setState(state => {
@@ -45,14 +45,25 @@ class Home extends Component {
 			  } else {
 				state.products.sort((a, b) => (a.id > b.id) ? 1 : -1);
 			  }
-			  if (state.cover !== '') {
-				return { filteredProducts: state.products.filter(a => a.cover.indexOf(state.cover) >= 0) };
-			  }
-			  return { filteredProducts: state.products };
-			})
+			if (state.cover !== '') {
+			return { filteredProducts: state.products.filter(a => a.cover === state.cover) };
+			}
+			if (state.type !== '') {
+				return { filteredProducts: state.products.filter(a => a.type.toLowerCase() === state.type.toLowerCase()) };
+				}
+			if (state.search !== '') {
+				return { filteredProducts: state.products.filter(product =>  product.title.toLowerCase().includes(state.search.toLowerCase())) };
+				}
+			return { filteredProducts: state.products };
+		})
 	}
 
-  handlePriceSort(event) {
+	handleSearchProducts(event) {
+		this.setState({search: event.target.value});
+		this.listProducts();
+	}
+
+  	handlePriceSort(event) {
 		this.setState({sort: event.target.value});
 		this.listProducts();
 	}
@@ -62,17 +73,27 @@ class Home extends Component {
 		this.listProducts();
 	}
 
+	handleTypeFilter(event) {
+		this.setState({type: event.target.value});
+		this.listProducts();
+	}
+
 	render() {
-		console.log(this.props)
-		console.log("Produkty: " + this.state.products)
-		console.log("filteredProducts: " + this.state.filteredProducts)
-		console.log("Cover 22 2: " + JSON.stringify(this.state.cover));
-		console.log("Sort 22 2: " + JSON.stringify(this.state.sort));
+		console.log("Search: " + JSON.stringify(this.state.search));
 		return(   
 			<div className="homepage-container">
-          		<div className="sidebar">
-					<Filter cover={this.state.cover} sort={this.state.sort} handlePriceSort={this.handlePriceSort} handleCoverFilter={this.handleCoverFilter}/>
-					
+				<div className="sidebar">
+					<Filter 
+						cover={this.state.cover} 
+						type={this.state.type} 
+						sort={this.state.sort} 
+						search={this.state.search} 
+						handlePriceSort={this.handlePriceSort} 
+						handleCoverFilter={this.handleCoverFilter} 
+						handleTypeFilter={this.handleTypeFilter} 
+						handleSearchProducts={this.handleSearchProducts}
+					/>
+		
 				</div>
 				<ProductsList 
 					products={this.state.filteredProducts}  
@@ -92,6 +113,7 @@ const mapStateToProps = function(store) {
 		books: store.booksReducer,
 		products: store.productsReducer,
 		cart: store.cart,
+		
 	};
 };
 const mapDispatchToProps = dispatch => ({
@@ -107,4 +129,3 @@ export default connect(
   mapStateToProps,
 	mapDispatchToProps
 )(Home);
-

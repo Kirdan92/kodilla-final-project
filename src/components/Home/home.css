@@ -1,48 +1,19 @@
 .homepage-container {
     display: grid;
     grid-template-areas: 
-    'sidebar booklist rightspace';
+    'sidebar booklist';
     grid-gap: 10px;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr;
+    
+}
+
+.product-list-wrapper {
     padding-top: 15px;
 }
-
-
-.book-list-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    flex-wrap: wrap;
-}
-
-.book-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 300px;
-    min-height: 400px;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    background: #fff;
-    padding: 10px;
-}
-.book-container h2{
-    text-align: center
-}
-.book-container img {
-    max-width: 120px;
-    height: 150px;
-}
-
 .product-row{
     margin-bottom: 10px;
 }
-.product-list-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    flex-wrap: wrap;
-}
+
 
 .product-container {
     display: flex;
@@ -76,4 +47,18 @@
 }
 .product-pagination {
     padding: 0;
+}
+
+.productList-actions {
+    
+    align-content: space-between;
+}
+
+
+@media (max-width: 768px) {
+	.homepage-container  {
+	  grid-template-columns: auto auto;
+	  grid-template-areas: 
+		"sidebar booklist"
+     }
 }
