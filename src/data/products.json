@@ -6,9 +6,10 @@
                 "image": "https://ecsmedia.pl/c/bractwo-pierscienia-wladca-pierscieni-tom-1-wersja-ilustrowana-w-iext51375161.jpg",
                 "authors": ["John Ronald Reuel Tolkien"],
                 "type": "Book",
-                "cover": "twarda",
-                "price": 34.89
-
+                "sale": false,
+                "cover": "hard",
+                "price": 34.89,
+                "oldPrice": 45.99
             },
             {
                 "id": 2,
@@ -16,125 +17,257 @@
                 "image": "https://ecsmedia.pl/c/dwie-wieze-wladca-pierscieni-tom-2-wersja-ilustrowana-w-iext51379586.jpg",
                 "authors": ["John Ronald Reuel Tolkien"],
                 "type": "Book",
-                "cover": "twarda",
+                "sale": false,
+                "cover": "hard",
                 "price": 25.99
             },
             {
                 "id": 3,
                 "title": "Amazing Spider-Man: Szczęście Parkera. Tom 1",
-                "image": "https://ecsmedia.pl/c/powrot-krola-wladca-pierscieni-tom-3-wersja-ilustrowana-w-iext51375160.jpg",
+                "image": "https://ecsmedia.pl/c/amazing-spider-man-tom-1-szczescie-parkera-w-iext48871188.jpg",
                 "authors": ["Dan Slott", "Humberto Ramos"],
                 "type": "Comic",
-                "cover": "twarda",
-                "price": 35.50
+                "cover": "hard",
+                "sale": true,
+                "price": 35.50,
+                "oldPrice": 45.99
             },
             {
                 "id": 4,
                 "title": "Deadpool. Martwi prezydenci. Tom 1.",
-                "image": "https://ecsmedia.pl/c/powrot-krola-wladca-pierscieni-tom-3-wersja-ilustrowana-w-iext51375160.jpg",
+                "image": "https://ecsmedia.pl/c/martwi-prezydenci-deadpool-tom-1-w-iext38704679.jpg",
                 "authors": ["Brian Posehn", "Gerry Duggan", "Tony Moore"],
                 "type": "Comic",
-                "cover": "miekka",
+                "sale": false,
+                "cover": "soft",
                 "price": 33.99
             },
             {
                 "id": 5,
-                "title": "Deadpool. Martwi prezydenci. Tom 1.",
-                "image": "https://ecsmedia.pl/c/powrot-krola-wladca-pierscieni-tom-3-wersja-ilustrowana-w-iext51375160.jpg",
+                "title": "Virion. Adept. Tom 3.",
+                "image": "https://ecsmedia.pl/c/virion-adept-tom-3-w-iext54543883.jpg",
                 "authors": ["Brian Posehn", "Gerry Duggan", "Tony Moore"],
                 "type": "Comic",
-                "cover": "miekka",
-                "price": 33.99
+                "cover": "soft",
+                "sale": true,
+                "price": 33.99,
+                "oldPrice": 39.99
             },
             {
                 "id": 6,
                 "title": "Avengers. Czas się kończy. Tom 3",
-                "image": "https://ecsmedia.pl/c/powrot-krola-wladca-pierscieni-tom-3-wersja-ilustrowana-w-iext51375160.jpg",
+                "image": "https://ecsmedia.pl/c/czas-sie-konczy-avengers-tom-3-w-iext52948598.jpg",
                 "authors": ["Mike Deodato", "Stefano Caselli", "Kev Walker", "Dalibor Talajić"],
                 "type": "Comic",
-                "cover": "miekka",
-                "price": 25.89
+                "sale": false,
+                "cover": "soft",
+                "price": 35.99
             },
             {
                 "id": 7,
                 "title": "Gra o tron. Pieśń Lodu i Ognia. Tom 1 ",
-                "image": "https://ecsmedia.pl/c/powrot-krola-wladca-pierscieni-tom-3-wersja-ilustrowana-w-iext51375160.jpg",
+                "image": "https://ecsmedia.pl/c/gra-o-tron-piesn-lodu-i-ognia-tom-1-w-iext38002957.jpg",
                 "authors": ["Martin George R. R."],
                 "type": "Book",
-                "cover": "twarda",
+                "sale": false,
+                "cover": "hard",
                 "price": 44.99
             },
             {
                 "id": 8,
-                "title": "Gra o tron. Pieśń Lodu i Ognia. Tom 1 ",
-                "image": "https://ecsmedia.pl/c/powrot-krola-wladca-pierscieni-tom-3-wersja-ilustrowana-w-iext51375160.jpg",
-                "authors": ["Martin George R. R."],
+                "title": "Wolverine. Tom 1",
+                "image": "https://ecsmedia.pl/c/wolverine-tom-1-w-iext51089496.jpg",
+                "authors": ["Aaron Jason"],
                 "type": "Book",
-                "cover": "twarda",
-                "price": 44.99
+                "sale": false,
+                "cover": "soft",
+                "price": 34.99
             },
             {
                 "id": 9,
-                "title": "Gra o tron. Pieśń Lodu i Ognia. Tom 1 ",
-                "image": "https://ecsmedia.pl/c/powrot-krola-wladca-pierscieni-tom-3-wersja-ilustrowana-w-iext51375160.jpg",
+                "title": "Starcie królów. Pieśń Lodu i Ognia. Tom 2",
+                "image": "https://ecsmedia.pl/c/starcie-krolow-piesn-lodu-i-ognia-tom-2-w-iext37994181.jpg",
                 "authors": ["Martin George R. R."],
                 "type": "Book",
-                "cover": "twarda",
-                "price": 44.99
+                "sale": true,
+                "cover": "soft",
+                "price": 34.99,
+                "oldPrice": 39.99
             },
             {
                 "id": 10,
-                "title": "Gra o tron. Pieśń Lodu i Ognia. Tom 1 ",
-                "image": "https://ecsmedia.pl/c/powrot-krola-wladca-pierscieni-tom-3-wersja-ilustrowana-w-iext51375160.jpg",
+                "title": "Taniec ze smokami. Część 1. Pieśń Lodu i Ognia. Tom 5 ",
+                "image": "https://ecsmedia.pl/c/taniec-ze-smokami-czesc-1-piesn-lodu-i-ognia-tom-5-w-iext37984004.jpg",
                 "authors": ["Martin George R. R."],
                 "type": "Book",
-                "cover": "twarda",
-                "price": 44.99
+                "sale": true,
+                "cover": "hard",
+                "price": 34.99,
+                "oldPrice": 49.99
             },
             {
                 "id": 11,
-                "title": "Gra o tron. Pieśń Lodu i Ognia. Tom 1 ",
-                "image": "https://ecsmedia.pl/c/powrot-krola-wladca-pierscieni-tom-3-wersja-ilustrowana-w-iext51375160.jpg",
+                "title": "Żeglarze nocy i inne opowiadania",
+                "image": "https://ecsmedia.pl/c/zeglarze-nocy-i-inne-opowiadania-w-iext54043675.jpg",
                 "authors": ["Martin George R. R."],
                 "type": "Book",
-                "cover": "twarda",
+                "sale": false,
+                "cover": "hard",
                 "price": 44.99
             },
             {
                 "id": 12,
-                "title": "Gra o tron. Pieśń Lodu i Ognia. Tom 1 ",
-                "image": "https://ecsmedia.pl/c/powrot-krola-wladca-pierscieni-tom-3-wersja-ilustrowana-w-iext51375160.jpg",
-                "authors": ["Martin George R. R."],
+                "title": "Wolverine. Tom 4",
+                "image": "https://ecsmedia.pl/c/wolverine-tom-4-w-iext53023765.jpg",
+                "authors": ["Aaron Jason"],
                 "type": "Book",
-                "cover": "twarda",
-                "price": 44.99
+                "sale": false,
+                "cover": "hard",
+                "price": 98.99
             },
             {
                 "id": 13,
-                "title": "Gra o tron. Pieśń Lodu i Ognia. Tom 1 ",
-                "image": "https://ecsmedia.pl/c/powrot-krola-wladca-pierscieni-tom-3-wersja-ilustrowana-w-iext51375160.jpg",
-                "authors": ["Martin George R. R."],
+                "title": "Wolverine. Tom 3",
+                "image": "https://ecsmedia.pl/c/wolverine-tom-3-w-iext52784503.jpg",
+                "authors": ["Aaron Jason"],
                 "type": "Book",
-                "cover": "twarda",
-                "price": 44.99
+                "sale": true,
+                "cover": "hard",
+                "price": 74.99,
+                "oldPrice": 89.99
             },
             {
                 "id": 14,
-                "title": "Gra o tron. Pieśń Lodu i Ognia. Tom 1 ",
-                "image": "https://ecsmedia.pl/c/powrot-krola-wladca-pierscieni-tom-3-wersja-ilustrowana-w-iext51375160.jpg",
-                "authors": ["Martin George R. R."],
+                "title": "Bogobójca. Thor Gromowładny. Tom 1 ",
+                "image": "https://emp-scs.img-osdw.pl/img-p/1/egmont/44ca7fa2/std/492-452/857353o.jpg",
+                "authors": ["Aaron Jason"],
                 "type": "Book",
-                "cover": "twarda",
-                "price": 44.99
+                "sale": false,
+                "cover": "soft",
+                "price": 88.99
             },
             {
                 "id": 15,
-                "title": "Gra o tron. Pieśń Lodu i Ognia. Tom 1 ",
-                "image": "https://ecsmedia.pl/c/powrot-krola-wladca-pierscieni-tom-3-wersja-ilustrowana-w-iext51375160.jpg",
-                "authors": ["Martin George R. R."],
+                "title": "Grzmiąca krew. Potężna Thor. Tom 1 ",
+                "image": "https://ecsmedia.pl/c/grzmiaca-krew-potezna-thor-tom-1-w-iext54204144.jpg",
+                "authors": ["Aaron Jason"],
                 "type": "Book",
-                "cover": "twarda",
-                "price": 44.99
+                "sale": false,
+                "cover": "soft",
+                "price": 64.99
+            },
+            {
+                "id": 16,
+                "title": "Władca Pierścieni: Drużyna Pierścienia",
+                "image": "https://ecsmedia.pl/c/bractwo-pierscienia-wladca-pierscieni-tom-1-wersja-ilustrowana-w-iext51375161.jpg",
+                "authors": ["John Ronald Reuel Tolkien"],
+                "type": "Book",
+                "sale": false,
+                "cover": "hard",
+                "price": 34.89
+
+            },
+            {
+                "id": 17,
+                "title": "Władca Pierścieni: Drużyna Pierścienia",
+                "image": "https://ecsmedia.pl/c/bractwo-pierscienia-wladca-pierscieni-tom-1-wersja-ilustrowana-w-iext51375161.jpg",
+                "authors": ["John Ronald Reuel Tolkien"],
+                "type": "Book",
+                "sale": false,
+                "cover": "hard",
+                "price": 34.89
+
+            },
+            {
+                "id": 18,
+                "title": "Władca Pierścieni: Drużyna Pierścienia",
+                "image": "https://ecsmedia.pl/c/bractwo-pierscienia-wladca-pierscieni-tom-1-wersja-ilustrowana-w-iext51375161.jpg",
+                "authors": ["John Ronald Reuel Tolkien"],
+                "type": "Book",
+                "sale": false,
+                "cover": "hard",
+                "price": 34.89
+
+            },
+            {
+                "id": 19,
+                "title": "Władca Pierścieni: Drużyna Pierścienia",
+                "image": "https://ecsmedia.pl/c/bractwo-pierscienia-wladca-pierscieni-tom-1-wersja-ilustrowana-w-iext51375161.jpg",
+                "authors": ["John Ronald Reuel Tolkien"],
+                "type": "Book",
+                "sale": false,
+                "cover": "hard",
+                "price": 34.89
+
+            },
+            {
+                "id": 20,
+                "title": "Władca Pierścieni: Drużyna Pierścienia",
+                "image": "https://ecsmedia.pl/c/bractwo-pierscienia-wladca-pierscieni-tom-1-wersja-ilustrowana-w-iext51375161.jpg",
+                "authors": ["John Ronald Reuel Tolkien"],
+                "type": "Book",
+                "sale": false,
+                "cover": "hard",
+                "price": 34.89
+
+            },
+            {
+                "id": 21,
+                "title": "Władca Pierścieni: Drużyna Pierścienia",
+                "image": "https://ecsmedia.pl/c/bractwo-pierscienia-wladca-pierscieni-tom-1-wersja-ilustrowana-w-iext51375161.jpg",
+                "authors": ["John Ronald Reuel Tolkien"],
+                "type": "Book",
+                "sale": true,
+                "cover": "hard",
+                "price": 34.89,
+                "oldPrice": 39.99
+
+            },
+            {
+                "id": 22,
+                "title": "Władca Pierścieni: Drużyna Pierścienia",
+                "image": "https://ecsmedia.pl/c/bractwo-pierscienia-wladca-pierscieni-tom-1-wersja-ilustrowana-w-iext51375161.jpg",
+                "authors": ["John Ronald Reuel Tolkien"],
+                "type": "Book",
+                "sale": false,
+                "cover": "hard",
+                "price": 34.89
+
+            },
+            {
+                "id": 23,
+                "title": "Władca Pierścieni: Drużyna Pierścienia",
+                "image": "https://ecsmedia.pl/c/bractwo-pierscienia-wladca-pierscieni-tom-1-wersja-ilustrowana-w-iext51375161.jpg",
+                "authors": ["John Ronald Reuel Tolkien"],
+                "type": "Book",
+                "sale": true,
+                "cover": "hard",
+                "price": 24.89,
+                "oldPrice": 27.99
+
+            },
+            {
+                "id": 24,
+                "title": "Władca Pierścieni: Drużyna Pierścienia",
+                "image": "https://ecsmedia.pl/c/bractwo-pierscienia-wladca-pierscieni-tom-1-wersja-ilustrowana-w-iext51375161.jpg",
+                "authors": ["John Ronald Reuel Tolkien"],
+                "type": "Book",
+                "sale": false,
+                "cover": "hard",
+                "price": 34.89
+
+            },
+            {
+                "id": 25,
+                "title": "Władca Pierścieni: Drużyna Pierścienia",
+                "image": "https://ecsmedia.pl/c/bractwo-pierscienia-wladca-pierscieni-tom-1-wersja-ilustrowana-w-iext51375161.jpg",
+                "authors": ["John Ronald Reuel Tolkien"],
+                "type": "Book",
+                "sale": true,
+                "cover": "hard",
+                "price": 24.89,
+                "oldPrice": 29.99
+
             }
         ]
 }

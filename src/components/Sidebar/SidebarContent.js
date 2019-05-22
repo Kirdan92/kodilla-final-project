@@ -45,11 +45,11 @@ const SidebarContent = (props) => {
                                 <label htmlFor="cover-all">Wszsytkie</label>
                             </li>    
                             <li>
-                                <input type="radio" name="cover" value="twarda" id="cover-hard"  onChange={props.handleCoverFilter}/>
+                                <input type="radio" name="cover" value="hard" id="cover-hard"  onChange={props.handleCoverFilter}/>
                                 <label htmlFor="cover-hard">Twarda</label>
                             </li>
                             <li>
-                                <input type="radio"  name="cover"value="miekka" id="cover-soft"  onChange={props.handleCoverFilter}/>
+                                <input type="radio"  name="cover" value="soft" id="cover-soft"  onChange={props.handleCoverFilter}/>
                                 <label htmlFor="cover-soft">Miękka</label>
                             </li>
                         </ul>
@@ -69,7 +69,7 @@ const SidebarContent = (props) => {
                                 <label htmlFor="type-book">Ksiażka</label>
                             </li>
                             <li>
-                                <input type="radio"  name="type"value="comic" id="type-comic" onChange={props.handleTypeFilter}/>
+                                <input type="radio"  name="type" value="comic" id="type-comic" onChange={props.handleTypeFilter}/>
                                 <label htmlFor="type-comic">Komiks</label>
                             </li>
                         </ul>

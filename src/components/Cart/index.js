@@ -65,7 +65,7 @@ function sort (items) {
 
   render() {
     return (
-      <Container>
+      <Container className="cart-container">
         {
           this.state.productsAmount > 0 ? 
           <Col>
@@ -144,7 +144,7 @@ const mapDispatchToProps = function(dispatch) {
       dispatch({ type: "ADD_ITEM", payload: item})
     },
     removeFromCart: (item) => {
-      dispatch({ type: "REMOVE_ITEM", payload: item})
+      dispatch({ type: "REMOVE_ITEM", payload: item}) 
     },
     removeAllFromCart: (item) => {
       dispatch({ type: "REMOVE_ALL", payload: item})

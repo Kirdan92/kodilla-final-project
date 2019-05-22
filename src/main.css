@@ -14,13 +14,13 @@ html{
 	line-height: normal;
 }
 body {
-	background-color: #dfe6e9;
+	background-color: #bdc3c7;
 	font-family: 'Open Sans', sans-serif;
 }
 
 .container {
     position: relative;
-    min-height: 100vh;
+    
 }
 
 .content-wrapper {

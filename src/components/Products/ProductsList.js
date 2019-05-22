@@ -33,7 +33,7 @@ class ProductList extends React.Component {
         console.log(currentProducts)
         const productsLayout = currentProducts
           .map((product, i) => (
-              <Col  xs="12" sm="6" md="4" className="center-justify flex-display" lg={rowUnit} key={product.id}>
+              <Col  xs="12" sm="6" md="6" lg="4" className="center-justify flex-display" xl={rowUnit} key={product.id}>
                 			
                   <Product
                   

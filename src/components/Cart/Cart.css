@@ -1,3 +1,7 @@
+.cart-container {
+    height: 100vh;
+}
+
 .middle-posiiton {
     position: absolute;
     top: 40%;

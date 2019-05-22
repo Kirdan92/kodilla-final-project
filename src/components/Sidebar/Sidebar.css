@@ -1,18 +1,40 @@
 .sidebar {
     position: relative;
-    border-right: 1px solid;
+   
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .hidden-radio {
     display: none;
 }
 
-.sidebar-container {
 
+.sidebar-wrapper {
+    padding: 15px 10px;
+    background-color: transparent;
+    color: #FFF;
+    background: transparent;
+    box-sizing: border-box;
+    position: relative;
+    
+}
+.sidebar-container {
+    box-sizing: border-box;
+    position: absolute;
+    height: 100%;
+    width: 250px;
+    top: 0;
+    right: -190px;
+    padding: 40px;
+    background: rgba(52, 58, 64, 0.7);
+    transition: 0.3s transform ease-in-out;
 }
 
+.sidebar-container-visible {
+    transform: translateX(-250px); 
+    
+}
 
 .sidebar-hidden {
     max-width: 50px;
@@ -58,7 +80,7 @@
 
 .filter-title {
     font-size: 1.1rem;
-    color: #636e72;
+    color: #bdc3c7;
     text-decoration: underline;
 }
 
@@ -82,21 +104,24 @@
 }
 
 
-.sidebar-list li input:hover:not(:checked) + label{
-	color: #636e72;
+.sidebar-list li input:hover:not(:checked) + label {
+	color: #bdc3c7;
+}
+
+.sidebar-list input:checked {
+    color: #3498db;
 }
 
 .sidebar-list li input:checked + label:before {
 	content:'\2714';
-	text-indent: .9em;
-	color: #27ae60;
-	background-color: #ecf0f1;
+    text-indent: .9em;
+    color: #3498db;
 }
 
 /*Mobil Sidebar Styles*/
 
 .sidebar-container-small {
-    padding-top: 10px;
+    padding-top: 15px;
     position: relative;
 }
 .mobile-sidebar-container {
@@ -124,6 +149,7 @@
     background: transparent;
     position: relative;
     transition: 0.2s transform linear;
+    z-index: 1;
 }
 
 .hamburger::before, .hamburger::after {
@@ -151,9 +177,24 @@
     transform: rotate(-90deg) translateX(-10px);
 
 }
-
+.hamburger:hover {
+    color: #bdc3c7;
+}
 @media (max-width: 768px) {
-	.sidebar{
-	  border: none;
-     }
+    .sidebar-container {
+        box-sizing: border-box;
+        position: absolute;
+        height: 100%;
+        width: 250px;
+        top: 0;
+        right: -190px;
+        padding: 40px;
+        background: rgba(52, 58, 64, 1);
+        transition: 0.3s transform ease-in-out;
+        z-index: 2;
+    }
+
+    .hamburger {
+        z-index: 3;
+    }
 }

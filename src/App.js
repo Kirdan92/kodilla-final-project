@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Router from './Router';
-import { Header } from './components/Header';
+import  Header  from './components/Header';
 import { Footer } from "./components/Footer";
 
 

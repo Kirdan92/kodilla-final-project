@@ -3,7 +3,6 @@ import MediaQuery from 'react-responsive';
 import SidebarContent from "./SidebarContent";
 import { Container, Row, Col, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
-
 require('./Sidebar.css');
 
 
@@ -26,12 +25,14 @@ export default class Filter extends Component {
     render() {
 
         return (   
-              <div>
+              <div  className="sidebar-wrapper">
 
 
                 <MediaQuery query="(min-device-width: 769px)">   
-                    <Container>    
-                        <div className="sidebar-container">
+                    <button className="hamburger" onClick={this.handleToggle}></button>
+                      
+                        
+                        <div className={this.state.sidebarShow ?  "sidebar-container sidebar-container-visible"   : "sidebar-container"}>
                             <SidebarContent 
                                 cover={this.props.cover} 
                                 type={this.props.type} 
@@ -43,25 +44,25 @@ export default class Filter extends Component {
                                 handleSearchProducts={this.props.handleSearchProducts}
                             />
                         </div>
-                    </Container>    
+                      
                 </MediaQuery>
 
                 <MediaQuery query="(max-device-width: 768px)">                
-                    <Container className="sidebar-container-small"> 
-                        <button className="hamburger" onClick={this.handleToggle}></button>
-                        <div  className={this.state.sidebarShow ? "mobile-sidebar-container" : "mobile-sidebar-container  mobile-sidebar-hidden" }>
+                    <button className="hamburger" onClick={this.handleToggle}></button>
+                        
+                            
+                        <div className={this.state.sidebarShow ?  "sidebar-container" : "sidebar-container sidebar-container-visible" }>
                             <SidebarContent 
                                 cover={this.props.cover} 
+                                type={this.props.type} 
                                 sort={this.props.sort} 
-                                type={this.props.type}
                                 search={this.props.search} 
                                 handlePriceSort={this.props.handlePriceSort} 
                                 handleCoverFilter={this.props.handleCoverFilter} 
                                 handleTypeFilter={this.props.handleTypeFilter} 
                                 handleSearchProducts={this.props.handleSearchProducts}
                             />
-                        </div>
-                    </Container>
+                      </div>
                 </MediaQuery>
             
             </div>
