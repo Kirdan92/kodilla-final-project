@@ -42,20 +42,30 @@ class Home extends Component {
 				  (state.sort === 'lowest'
 					? ((a.price > b.price) ? 1 : -1)
 					: ((a.price < b.price) ? 1 : -1)));
-			  } else {
+			} else {
 				state.products.sort((a, b) => (a.id > b.id) ? 1 : -1);
-			  }
-			  //deklaracja zmiennej z state products - nadpisywanie jednej zmiennej 
-			if (state.cover !== '') {
-			return { filteredProducts: state.products.filter(a => a.cover === state.cover) };
 			}
-			if (state.type !== '') {
-				return { filteredProducts: state.products.filter(a => a.type.toLowerCase() === state.type.toLowerCase()) };
-				}
+			  //deklaracja zmiennej z state products - nadpisywanie jednej zmiennej 
+			let tempList = state.products;
+
 			if (state.search !== '') {
-				return { filteredProducts: state.products.filter(product =>  product.title.toLowerCase().includes(state.search.toLowerCase())) };
+				tempList = state.products.filter(product =>  product.title.toLowerCase().includes(state.search.toLowerCase()));
+				if (state.cover !== '') {
+					tempList = tempList.filter(a => a.cover === state.cover) ;
 				}
-			return { filteredProducts: state.products };
+				if (state.type !== '') {
+					tempList = tempList.filter(a => a.type.toLowerCase() === state.type.toLowerCase()) ;
+				}
+			} else {
+				if (state.cover !== '') {
+					tempList = state.products.filter(a => a.cover === state.cover) ;
+				}
+				if (state.type !== '') {
+					tempList = state.products.filter(a => a.type.toLowerCase() === state.type.toLowerCase()) ;
+				}
+			}
+
+			return { filteredProducts: tempList };
 		})
 	}
 

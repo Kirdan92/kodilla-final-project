@@ -3,7 +3,7 @@
     grid-template-areas: 
     'sidebar booklist';
     grid-gap: 10px;
-    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-columns: 250px 1fr 250px;
     
 }
 
@@ -84,11 +84,11 @@
 .product-title:hover {
     color: #341f97;
 }
-.product-authors, .product-cover {
+.product-authors, .product-cover, .product-amount {
     font-size: 0.7rem;
 }
 
-.product-cover {
+.product-cover, .product-amount {
     color: #8395a7;
 }
 .product-price-wrapper {
@@ -155,7 +155,7 @@
     height: 30px;
     line-height: 30px;
 }
-.sale-marker::after {
+.sale-marker::after, .prodDetails-sale-marker::after  {
     content: '';
     width: 0;
     height: 0;
@@ -167,12 +167,32 @@
     border-left: 20px solid #ff9f43;
     border-bottom: 15px solid transparent;
 }
-.sale-marker h4 {
+.sale-marker h4,  .prodDetails-sale-marker h4 {
     font-size: 1.1rem;
     margin: 0;
     color: #FFF;
 }
 
+.product-available {
+    color: #44bd32;
+}
+
+.product-unavailable {
+    color: #e84118;
+}
+
+@media (max-width: 1200px) {
+    .homepage-container {
+        grid-template-columns: 250px 1fr;     
+    }
+}
+
+@media (max-width: 992px) {
+    .homepage-container {
+        grid-template-columns: 250px 1fr;
+        
+    }
+}
 @media (max-width: 768px) {
 	.homepage-container  {
 	  display: flex;

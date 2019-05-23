@@ -2,6 +2,8 @@ import React from 'react';
 import { Button, Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
+const reactStringReplace = require('react-string-replace');
+
 
 const Product = (props) => {
 
@@ -15,6 +17,7 @@ const Product = (props) => {
 					</div>	
 					: null
 				}
+
 			<div className="product-image-wrapper">
 
 				
@@ -26,12 +29,20 @@ const Product = (props) => {
 				<Link className="product-link" to={'/product/' + props.product.id}>	
 					<h2 className="product-title">{props.product.title}</h2>
 				</Link>
-				<h4 className="product-authors">Autor: {props.product.authors}</h4>
+				<h4 className="product-authors">Autor: {reactStringReplace(JSON.stringify(props.product.authors), /(["{}[\]])/g, (match, i) =>(""))}</h4>
 				{
 					props.product.type === "Book" ? <h4 className="product-cover">Książka</h4> : <h4 className="product-cover">Komiks</h4>
 				}
+				{
+					props.product.cover === "soft" ? <h4 className="product-cover">Oprawa: miękka</h4> : <h4 className="product-cover">Oprawa: twarda</h4> 
+				}
+				{
+					props.product.amount > 0 ? <h4 className="product-amount">Dostępność: <span className="product-available">W magazynie</span></h4> 
+					: 
+					<h4 className="product-amount">Dostępność: <span className="product-unavailable">Brak</span></h4>
+				}
 				
-				<h4 className="product-cover">Oprawa: {props.product.cover}</h4>
+			
 			
 			</div>
 			

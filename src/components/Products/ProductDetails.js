@@ -1,41 +1,127 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getProduct, GET_PRODUCT } from '../../actions/actionsProducts';
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col, Button, Table } from 'reactstrap';
+const reactStringReplace = require('react-string-replace');
 
+require('./products.css');
 
 class ProductDetails extends Component {
 	constructor(props) {
         super(props);
         
         this.state = { 
-            product: {}
+            product: {},
+            kek: this.props.selectedProduct.authors
+
 		};
 	}
 
 	componentDidMount() {
         this.props.getProduct(this.props.match.params.id);
+        this.setState( {
+            authors: this.props.match.params.id.authors
+        })
 	}
 
 	render() {
-        const { image, title} = this.props.selectedProduct;
+        const { image, title, authors, type, cover, amount, numPages, sale, price, oldPrice} = this.props.selectedProduct;
         const cartItem = this.props.cart.filter(cartItem => cartItem.id === this.props.selectedProduct.id)[0]
-        console.log(JSON.stringify(this.props.match.params.id))
+
 		return (
-            <Container>
-                <Row className="">
-                    <div className="col-sm-3 product-image-container">
-                        <img className="product-photo" src={image} alt="" />
+            <Container className="productDetails-wrapper">
+                <Row className="center-justify productDetails-row">
+                    <div className="col-sm-12 col-md-6 col-lg-3 product-image-container">
+                        <div className="photo-wrapper">
+                            {
+                                sale ? 
+                                <div className="prodDetails-sale-marker">
+                                    <h4>Promocja</h4>
+                                </div>	
+                                : null
+                            }  
+
+                            <img className="product-photo" src={image} alt="" />
+                        </div>
+                       
                     </div>
-                    <div className="col-sm-6 product-details-container">
+                    <div className="col-sm-12 col-md-6 col-lg-6 product-details-container">
                         <h3 className="product-details-title">{title}</h3>
+                        <div className="product-details-description">
+                            <h5 className="description-header">Opis:</h5>
+                            <div className="product-description">
+                                Si culpa. Natus. Aliquid. Ex occaecat yet dolorem exercitationem voluptas. Odit dolore but enim, but consequat yet laborum tempora. Aliquam magna labore for proident nor do accusantium or anim. Eaque incidunt and mollit, adipisci yet dolorem nor et ut. Error sunt eaque minim yet voluptas so dolores yet rem. Ex sed nor pariatur dolor yet totam error, consectetur. Reprehenderit. Consequat. Dolor ullamco nor consequuntur. 
+                            </div>
+                        </div>
+                        <div className="product-moreDetails">
+                            <h5 className="moreDetails-header">Szczegóły:</h5>
+                            <div className="product-moreDetails-container">
+                                <Table striped>
+                                    <tbody>
+                                        <tr>
+                                            <td>Autor:</td> 
+                                            <td>{reactStringReplace(JSON.stringify(authors), /(["{}[\]])/g, (match, i) =>(""))}</td>                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Typ:</td> 
+                                            
+                                                {
+                                                    type === "Book" ? <td> Książka </td>: <td>Komiks  </td>
+                                                }
+                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Oprawa:</td> 
+                                            
+                                                {
+                                                     cover === "soft" ? <td> miękka </td>: <td> twarda  </td>
+                                                }
+                                          
+                                        </tr>
+                                        <tr>
+                                            <td>Liczba stron:</td> 
+                                            <td> {numPages} </td>
+            
+                                        </tr>
+
+                                    </tbody>
+
+                                </Table>
+                            </div>
+
+                                
+                        </div>
                     </div>
-                    <div className="col-sm-3 product-purchase-container">
-                    <Button color="info" onClick={() => this.props.addToCart(this.props.selectedProduct)}>DODAJ DO KOSZYKA({(cartItem && cartItem.quantity) || 0})</Button >
-                        {
-                            cartItem ? <Button color="danger" onClick={() => this.props.removeFromCart(cartItem)}>USUŃ 1</Button >	: null
-                        }
+                    <div className="col-sm-12 col-md-12 col-lg-3 product-purchase-wrapper">
+                        <div className="product-purchase-container">
+                            {
+                                sale ? 
+                                <div className="product-price-wrapper">
+                                    <h3 className="productDetails-price">Cena:	</h3> 
+                                    <h3 className="productDetails-price">{price} zł 	</h3> 
+                                    <h3 className="productDetails-Oldprice">{oldPrice} zł</h3>	
+                                </div>
+                                
+                                
+                                :
+                                <h3 className="product-price">{price} zł</h3>
+                            }
+                            {
+                                amount > 0 ? <h4 className="productDetails-amount">Dostępność: <span className="productDetails-available">W magazynie</span></h4> 
+                                : 
+                                <h4 className="productDetails-amount">Dostępność: <span className="productDetails-unavailable">Brak</span></h4>
+                            }
+                    
+                            <Row className="center-justify productList-actions">
+                                <Button className="btn-add" onClick={() => this.props.addToCart(this.props.selectedProduct)}>DODAJ DO KOSZYKA({(cartItem && cartItem.quantity) || 0})</Button >
+                                {
+                                    cartItem ? <Button color="danger" className="btn-remove" onClick={() => this.props.removeFromCart(cartItem)}>USUŃ 1</Button >	: null
+                                }
+                            </Row>
+                            
+                        </div>
                     </div>
+                   
                 </Row>
             </Container>
 
