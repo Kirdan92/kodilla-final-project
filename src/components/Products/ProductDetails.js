@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getProduct, GET_PRODUCT } from '../../actions/actionsProducts';
-import { Container, Row, Col, Button, Table } from 'reactstrap';
+import { GET_PRODUCT } from '../../actions/actionsProducts';
+import { Container, Row, Button, Table } from 'reactstrap';
 const reactStringReplace = require('react-string-replace');
 
 require('./products.css');

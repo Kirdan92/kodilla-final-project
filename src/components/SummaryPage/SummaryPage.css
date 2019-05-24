@@ -1,0 +1,7 @@
+.summary-container  {
+    min-height: 100vh;
+    background: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+}

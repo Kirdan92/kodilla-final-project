@@ -1,0 +1,27 @@
+.checkout-container {
+    min-height: 100vh;
+    background: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.checkout-header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.checkout-form {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #dfe6e9;
+
+}
+
+
+.checkout-form input:hover {
+    outline: #007bff;
+}

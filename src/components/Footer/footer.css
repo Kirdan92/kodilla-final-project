@@ -1,5 +1,5 @@
 .footer-container {
-    
+    display: flex;
     bottom: 0;
     width: 100%;
     background-color: #b2bec3;

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Container, Row, Col, Table, Button } from 'reactstrap';
+import { Container, Row, Col} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import CheckoutForm from "./CheckoutForm";
 
-
+require('./Checkout.css');
 
  class Checkout extends Component {
   constructor(props) {
@@ -43,12 +43,12 @@ import CheckoutForm from "./CheckoutForm";
 
   render() {
     return (
-        <Container>
+        <Container className="checkout-container">
         {
           this.state.productsAmount > 0 ? 
         <Row className="center-justify">
             <Col>
-                <h3 className="center-align">Dane do wysyłki</h3>
+                <h3 className="checkout-header center-align">Dane do wysyłki</h3>
                 <CheckoutForm checkout={this.props.checkout} makeOrder={this.props.makeOrder} />
             </Col>   
         </Row>

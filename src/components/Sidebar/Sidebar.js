@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import MediaQuery from 'react-responsive';
 import SidebarContent from "./SidebarContent";
-import { Container, Row, Col, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
 require('./Sidebar.css');
 

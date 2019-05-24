@@ -1,4 +1,4 @@
-import { GET_PRODUCTS, GET_PRODUCT, SET_COVER, SEARCH_PRODUCTS } from '../actions/actionsProducts';
+import {  GET_PRODUCT } from '../actions/actionsProducts';
 import productsData from '../data/products.json';
 
 
@@ -19,7 +19,7 @@ const initialState = {
 const productsReducer = (state=initialState, action) => {
     switch(action.type) {
         case GET_PRODUCT:
-            const selectedProduct = state.products.find(product => product.id == action.payload);
+            const selectedProduct = state.products.find(product => product.id === action.payload);
           
             return Object.assign({}, state, {selectedProduct});
         case 'SEARCH_PRODUCTS':

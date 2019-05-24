@@ -27,6 +27,7 @@
     background: #fff;
     padding: 10px;
     position: relative;
+    margin-bottom: 10px;
 }
 
 .product-container:hover {
@@ -130,7 +131,7 @@
 }
 .productList-actions button {
     margin-bottom: 5px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 .btn-add {
     background-color: #2e86de;

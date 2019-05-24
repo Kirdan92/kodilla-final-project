@@ -34,7 +34,6 @@ function sort (items) {
 
   handleAdd(cartItem) {
     this.props.addToCart(cartItem);
-    this.summFinalPrice();
   }
 
   handleRemove(cartItem) {
@@ -69,40 +68,49 @@ function sort (items) {
         {
           this.state.productsAmount > 0 ? 
           <Col>
+            <h3 className="cart-header">Zawartość koszyka</h3>
             <Table striped responsive>
-            <thead>
+            <thead className="dark-tableHead">
             <tr>
               <th></th>
               <th>Nazwa</th>
               <th>Ilość</th>
+              <th>Cena (1 szt)</th>
+              <th colSpan="3">Akcje</th>
             </tr>
             </thead>
             <tbody>
               {
                 sort(this.props.cart).map(cartItem => <tr key={cartItem.id}>
-                  <td><img  className="cart-productImage" src={ cartItem.image } alt={cartItem.title}/></td>
-                  <td>{ cartItem.title }</td>
+                  <td><img  className="cart-productImage" src={ cartItem.image } alt={cartItem.title}/></td>    
+                  
+                    <td className="cart-productTitle">
+                      <Link className="product-link" to={'/product/' + cartItem.id}>	{ cartItem.title }</Link>
+                    </td>
+                  
                   <td>{ cartItem.quantity }</td>
                   <td>{ cartItem.price }</td>
                   <td>
-                    <Button color="success" onClick={() => this.handleAdd(cartItem)}>+</Button>
+                    <Button className="btn-cart" color="success" title="Dodaj" onClick={() => this.handleAdd(cartItem)}>+</Button>
                   </td>
                   <td>
-                    <Button color="danger" onClick={() => this.handleRemove(cartItem)}>-</Button>
+                    <Button className="btn-cart" color="danger" title="Usuń" onClick={() => this.handleRemove(cartItem)}>-</Button>
                   </td>
                   <td>
-                    <Button outline color="danger" onClick={() => this.handleRremoveAll(cartItem)}>Usuń wszsytkie</Button>
+                    <Button outline color="danger" title="Usuń wszystkie"  onClick={() => this.handleRremoveAll(cartItem)}>Usuń wszsytkie</Button>
                   </td>
                 </tr>)
               }
+                <tr>
+                  <td colSpan="7" className="center-align dark-tableHead">
+                    Do zapłaty: {this.state.finalPrice} zł
+                  </td>
+                </tr>
             </tbody>
           </Table>
-          <div>
-            <p>Do zapłaty: {this.state.finalPrice}</p>
-          </div>
           <Row>
             <Col>
-              <Button color="light" onClick={() => this.summFinalPrice()}>Przelicz</Button>
+              <Button color="info" onClick={() => this.summFinalPrice()}>Przelicz</Button>
             </Col>
             <Col className="checkout-col">            
               <Link to='/checkout'>

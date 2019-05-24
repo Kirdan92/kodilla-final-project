@@ -1,5 +1,15 @@
 .cart-container {
-    height: 100vh;
+    min-height: 100vh;
+    background: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.cart-header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+    font-size: 1.7rem;
+    font-weight: 700;
 }
 
 .middle-posiiton {
@@ -12,7 +22,7 @@
 }
 
 .emptyCart-title, .emptyCart-link-text {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
 
 }
 
@@ -29,4 +39,22 @@
 .checkout-col {
     display: flex;
     justify-content: flex-end;
+}
+
+.dark-tableHead {
+    background-color: #343a40!important;
+    color: #fff;
+    border-top: 1px solid #dee2e6;
+}
+
+.cart-productTitle {
+    color: #007bff;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.btn-cart {
+    width: 35px;
+    font-size: 1rem;
+    font-weight: 700;
 }

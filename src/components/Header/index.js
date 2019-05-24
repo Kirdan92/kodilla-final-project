@@ -7,14 +7,11 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  Container,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
-
+  Container
+} from 'reactstrap';
 
 import "./header.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function sumItems(cartState) {
   return cartState.reduce((prev, current) => {
@@ -51,25 +48,8 @@ export default class  Header extends React.Component {
               <NavItem>
                 <NavLink exact to="/"  className="nav-link" activeClassName="active">Strona główna</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Typ
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Książki
-                  </DropdownItem>
-                  <DropdownItem>
-                    Komiksy
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    <NavLink exact to="/">Wszystkie</NavLink>
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
               <NavItem>
-                <NavLink exact to="/cart" className="nav-link" activeClassName="active">Koszyk({sumItems(itemsInCart) || 0})</NavLink>
+                <NavLink exact to="/cart" className="nav-link" activeClassName="active"><FontAwesomeIcon icon="shopping-cart" /> Koszyk({sumItems(itemsInCart) || 0})</NavLink>
               </NavItem>
             </Nav>
             </Collapse>

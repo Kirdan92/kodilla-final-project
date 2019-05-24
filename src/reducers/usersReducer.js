@@ -26,9 +26,10 @@ const usersReducer = (state=initialState, action) => {
             
         case GET_USERS:
             return Object.assign({}, state, {users: state.users});
-            
+        default:
+            return state;
     }
-    return state;
+  
 };
 
 

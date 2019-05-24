@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Container, Row, Col, Table, Button } from 'reactstrap';
+import { Container, Row, Col, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-
+require('./SummaryPage.css');
 
 function sort (items) {
     return items.sort((a, b) => a.id - b.id)
@@ -46,17 +46,17 @@ function sort (items) {
   }
 
   render() {
-        const  {finalPrice, cartProducts, productsAmount, checkoutData} = this.state;
+        const  {finalPrice, checkoutData} = this.state;
     return (
-        <Container>
+        <Container className="summary-container ">
         {
           this.state.productsAmount > 0 ? 
         <Col>
-            Podsumowanie:
+            <h3 className="checkout-header center-align">Podsumowanie zamówienia</h3>
                     <Table striped responsive>
-                        <thead>
+                        <thead className="dark-tableHead">
                             <tr>
-                                <th>Kupione przedmioty</th>
+                                <th colSpan="6" className="center-align">Kupione przedmioty</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -64,9 +64,8 @@ function sort (items) {
                                 <td>Nazwa</td>
                                 <td>Ilość</td>
                                 <td>Cena</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td colSpan="3"></td>
+
                             </tr>
                         {
                             sort(this.props.cart).map(cartItem => 
@@ -77,9 +76,9 @@ function sort (items) {
                             </tr>)
                         }
                             </tbody>
-                            <thead>
+                            <thead className="dark-tableHead">
                                 <tr>
-                                    <th>Dane do wysyłki: </th>
+                                    <th colSpan="6" className="center-align">Dane do wysyłki: </th>
                                 </tr>                  
                             </thead>
                             <tbody>
@@ -88,7 +87,6 @@ function sort (items) {
                                 <td>Nazwisko</td>
                                 <td>emial</td>
                                 <td>Ulica</td>
-                                <td>Numer Domu</td>
                                 <td>Numer Miekszania</td>
                             </tr>
                             <tr>
@@ -96,7 +94,6 @@ function sort (items) {
                                 <td>{ checkoutData.lastName }</td>
                                 <td>{ checkoutData.emailInput }</td>
                                 <td>{ checkoutData.streetInput }</td>
-                                <td>{ checkoutData.buildingNum }</td>
                                 <td>{ checkoutData.flatNum }</td>
                             </tr>
                             <tr>

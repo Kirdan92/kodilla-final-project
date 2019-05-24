@@ -26,14 +26,12 @@ class ProductList extends React.Component {
     render () {
         
         const { currentPage, productPerPage } = this.state;
-        
-        const rowSize = 4;
-        const rowUnit = 12 / rowSize;
+        const rowSize = 12;
         const currentProducts = this.props.products.slice( currentPage * productPerPage,(currentPage + 1) * productPerPage);
-        console.log(currentProducts)
+        
         const productsLayout = currentProducts
           .map((product, i) => (
-              <Col  xs="12" sm="6" md="6" lg="4" className="center-justify flex-display" xl={rowUnit} key={product.id}>
+              <Col  xs="12" sm="6" md="6" lg="4" className="center-justify flex-display" xl="3" key={product.id}>
                 			
                   <Product
                   

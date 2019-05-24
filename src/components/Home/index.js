@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import ProductsList from "../Products/ProductsList";
 import Filter from "../Sidebar/Sidebar";
-import { searchProducts } from "../../actions/actionsProducts";
+import { Container } from 'reactstrap';
 
 require('./home.css');
 
@@ -90,7 +90,6 @@ class Home extends Component {
 	}
 
 	render() {
-		console.log("Search: " + JSON.stringify(this.state.search));
 		return(   
 			<div className="homepage-container">
 				<div className="sidebar">
@@ -106,12 +105,15 @@ class Home extends Component {
 					/>
 		
 				</div>
-				<ProductsList 
-					products={this.state.filteredProducts}  
-					addToCart={this.props.addToCart}
-					removeFromCart={this.props.removeFromCart}
-					cart={this.props.cart}
-				/>
+				<Container>
+					<ProductsList 
+						products={this.state.filteredProducts}  
+						addToCart={this.props.addToCart}
+						removeFromCart={this.props.removeFromCart}
+						cart={this.props.cart}
+					/>
+				</Container>
+				
       		</div>
       
 		);

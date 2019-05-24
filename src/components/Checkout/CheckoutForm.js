@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Form, Button, FormGroup, Label, Input, FormText, FormControl } from 'reactstrap';
+import { Container, Row, Form, Button, FormGroup, Label, Input} from 'reactstrap';
 import {
 	withRouter
 } from 'react-router-dom';
@@ -38,11 +38,11 @@ import {
   }
 
   render() {
-    const { firstName, lastName, emailInput, streetInput, buildingNum, flatNum } = this.state;
+    const { firstName, lastName, emailInput, streetInput, flatNum } = this.state;
     return (
-        <Container>
+        <Container >
             <Row className="center-justify">
-                <Form className="col-sm-6" onSubmit={this.handleSubmit}>
+                <Form className="checkout-form col-sm-6" onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <Label for="firstName">Imię</Label>
                         <Input type="text" name="firstName" value={firstName} id="firstName" onChange={this.handleChange} placeholder="Imię" />
@@ -58,10 +58,6 @@ import {
                     <FormGroup>
                         <Label for="streetInput">Ulica</Label>
                         <Input type="text" name="streetInput" value={streetInput}  onChange={this.handleChange} id="streetInput" placeholder="Ulica" />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="buildingNum">Numer Domu</Label>
-                        <Input type="number" name="buildingNum" value={buildingNum}  onChange={this.handleChange} id="buildingNum" placeholder="Numer Domu" />
                     </FormGroup>
                     <FormGroup>
                         <Label for="flatNum">Numer Mieszkania</Label>
