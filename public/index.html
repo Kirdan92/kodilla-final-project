@@ -5,6 +5,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="theme-color" content="#000000">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
   <link type="text/css" href="./style.css">
 	<title>Bookshop App</title>
@@ -12,5 +16,13 @@
 
 <body>
 	<div id="root"></div>
+	<script>
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function () {
+                console.log('Service Worker Registered');
+            });
+    }
+	</script>
 </body>
 </html>
