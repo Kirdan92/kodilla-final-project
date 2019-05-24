@@ -32,7 +32,6 @@ require('./Checkout.css');
       if(this.props.cart.length > 0) {
         for(let i = 0; i < this.props.cart.length; i++) {
           partialPrice += this.props.cart[i].price * this.props.cart[i].quantity
-          console.log(partialPrice);
         }
         partialPrice = Math.round(partialPrice * 100) / 100;
       }
