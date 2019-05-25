@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { GET_PRODUCT } from '../../actions/actionsProducts';
 import { Container, Row, Button, Table } from 'reactstrap';
-const reactStringReplace = require('react-string-replace');
 
 require('./products.css');
 
@@ -11,23 +10,18 @@ class ProductDetails extends Component {
         super(props);
         
         this.state = { 
-            product: {},
-            kek: this.props.selectedProduct.authors
-
+            product: {}
 		};
 	}
 
 	componentDidMount() {
         this.props.getProduct(this.props.match.params.id);
-        this.setState( {
-            authors: this.props.match.params.id.authors
-        })
 	}
 
 	render() {
         const { image, title, authors, type, cover, amount, numPages, sale, price, oldPrice} = this.props.selectedProduct;
-        const cartItem = this.props.cart.filter(cartItem => cartItem.id === this.props.selectedProduct.id)[0]
-
+        const cartItem = this.props.cart.find(cartItem => cartItem.id === this.props.selectedProduct.id)
+        console.log()
 		return (
             <Container className="productDetails-wrapper">
                 <Row className="center-justify productDetails-row">
@@ -60,7 +54,7 @@ class ProductDetails extends Component {
                                     <tbody>
                                         <tr>
                                             <td>Autor:</td> 
-                                            <td>{reactStringReplace(JSON.stringify(authors), /(["{}[\]])/g, (match, i) =>(""))}</td>                                          
+                                            <td>{(authors || []).join(", ")}</td>                                          
                                         </tr>
                                         <tr>
                                             <td>Typ:</td> 

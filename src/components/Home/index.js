@@ -45,7 +45,6 @@ class Home extends Component {
 			} else {
 				state.products.sort((a, b) => (a.id > b.id) ? 1 : -1);
 			}
-			  //deklaracja zmiennej z state products - nadpisywanie jednej zmiennej 
 			let tempList = state.products;
 
 			if (state.search !== '') {
